@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/search/search",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "找人"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我"
+      }
+    ]
+  }
+}
