@@ -6,7 +6,9 @@ Page({
     list: []
   },
 
-  onLoad: function() {
+  onLoad: function () {
+    var that = this;
+    
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -14,8 +16,11 @@ Page({
       return
     }
 
+    this.data.list = ['a', 'b', 'c']
+    console.log("list:", this.data.list);
+
     wx.request({
-      url: 'http://192.168.1.220:83/app/hmHousekeepingManagement/getHousekeepingWorkerList',
+      url: 'http://192.168.1.220:85/app/hmHousekeepingManagement/getHousekeepingWorkerList',
       method: 'POST',
       header: { 'content-type': 'application/json'},
       data: {
@@ -27,8 +32,9 @@ Page({
       },
       success:function(res) {
         if(res.statusCode == 200){
-          list = res.list;
-          console.log("list:", res.list);
+          // this.data.list = res.data.list;
+          that.setData({ list: res.data.list })
+          console.log("list:", res.data.list);
         }
         else 
           console.log('error')
@@ -38,7 +44,8 @@ Page({
           title: '系统错误',
         })
       },
-      complete: function(res) {
+      complete: function (res) {
+        
         wx.hideLoading();
       }
     })

@@ -1,1 +1,2 @@
-/* miniprogram/pages/me/me.wxss */
+/* miniprogram/pages/search/search.wxss */
+@import "../../style/guide.wxss";

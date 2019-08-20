@@ -1,4 +1,6 @@
 <!--index.wxml-->
-<view class="container">
-  
+<view class="container" wx:for="{{list}}" 
+      wx-for-index="index" 
+      wx-for-item="item">
+  {{index}}:{{item.name}}
 </view>
