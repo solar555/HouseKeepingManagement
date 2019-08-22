@@ -1,0 +1,71 @@
+/* pages/login/login.wxss */
+.title-top{
+  width: 100%;
+  height: 320rpx;
+  background-color: #4585f5;
+  text-align: center;
+  padding: 40rpx 0 0 0;
+  color: #fff;
+  font-size: 40rpx;
+  position: relative;
+}
+.title-top .dengl{
+  width: 710rpx;
+  height: 600rpx;
+  background-color: #fff;
+  position: absolute;
+  top:180rpx;
+  left:20rpx;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+.dengl text{
+  color: #000;
+}
+
+van-button{
+  background-color:#29ccb6;
+  padding:16rpx 16rpx;
+  border-radius: 4rpx;
+  color: #fff;
+}
+van-field{
+  line-height: 100px;
+  padding: 40rpx 0;
+}
+.lo-btn{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #4585f5;
+  color: #ffffff;
+  display: block;
+  margin: 80rpx auto;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+  box-shadow: 4rpx 4rpx 8rpx #bfabfe;
+}
+.dengl text{
+  color: #fff;
+}
+.dengl .biaoti{
+  color: #000;
+}
+.wxsan{
+  margin:800rpx 0 0 0;
+}
+.wxsan image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.wxsan .disanfang{
+  display: block;
+  font-size: 24rpx;
+  color: #888;
+}
+.wxsan .xian{
+  height: 2rpx;
+  background-color: #ccc;
+  display: block;
+  margin: 0 0 40rpx 0
+}

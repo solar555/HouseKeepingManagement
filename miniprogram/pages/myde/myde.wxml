@@ -1,0 +1,34 @@
+<!--pages/myde/myde.wxml-->
+
+<!-- 登录界面 -->
+<view wx:if="{{userInfo==null}}" class="wode-box" bindtap="goLogin">
+  <view class="touxiang">
+      <image src="/images/toux.png"></image>
+  </view>
+  <view class="xinxi">
+     <text class="zhubiaoti">立即登录</text>
+     <text class="fubiaoti">登录可以获取更多信息！</text>
+  </view>
+</view>
+
+<!-- 用户信息界面 -->
+<view wx:else class="wode-box" >
+  <view class="touxiang">
+      <!-- <image src="/images/toux.png"></image> -->
+      <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="xinxi">
+      <open-data type="userNickName"></open-data>
+      <open-data type="userGender" lang="zh_CN"></open-data>
+      <open-data type="userProvince" lang="zh_CN"></open-data>
+      <open-data type="userCity" lang="zh_CN"></open-data>
+  </view>
+</view>
+
+<view class="list-cum">
+  <van-cell title="常用地址" is-link size="large" icon="location"/>
+  <van-cell title="邀请好友领红白" is-link size="large" icon="invition" />
+  <van-cell title="关于我们" is-link size="large" icon="manager" />
+  <van-cell title="意见反馈" is-link size="large" icon="comment"/>
+</view>
+

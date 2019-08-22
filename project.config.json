@@ -1,16 +1,36 @@
 {
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
 	"appid": "wxa2443c0fd571ed64",
-	"projectname": "HouseKeepingManagement",
-	"libVersion": "2.2.5",
+	"projectname": "wx%E6%B5%8B%E8%AF%95",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -27,15 +47,52 @@
 			"list": []
 		},
 		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"name": "MiniPro/miniprogram/pages/xinxi/xinxi",
+					"pathName": "MiniPro/miniprogram/pages/xinxi/xinxi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MiniPro/miniprogram/pages/xqing/xqing",
+					"pathName": "MiniPro/miniprogram/pages/xqing/xqing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MiniPro/miniprogram/pages/myde/myde",
+					"pathName": "MiniPro/miniprogram/pages/myde/myde",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MiniPro/miniprogram/pages/login/login",
+					"pathName": "MiniPro/miniprogram/pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MiniPro/miniprogram/pages/find/find",
+					"pathName": "MiniPro/miniprogram/pages/find/find",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MiniPro/miniprogram/pages/zhaoren/zhaoren",
+					"pathName": "MiniPro/miniprogram/pages/zhaoren/zhaoren",
+					"scene": null
 				}
 			]
 		}

@@ -1,0 +1,23 @@
+/* pages/find/find.wxss */
+van-tabs{
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
+}
+.zanwujilu{
+  display: flex;
+  align-items:center;
+  flex-direction:column;
+  margin: 220rpx 0 0 0;
+}
+.zanwujilu image{
+  width: 450rpx;
+  height: 384rpx;
+}
+.zanwujilu text{
+  display: block;
+  margin: 40rpx 0 0 0;
+  font-size: 28rpx;
+  color: #888;
+}

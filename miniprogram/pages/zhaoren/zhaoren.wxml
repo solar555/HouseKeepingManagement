@@ -1,0 +1,48 @@
+<!--pages/zhaoren/zhaoren.wxml-->
+<view class="shaixuan">
+    <view class="list1" show="{{ show }}" bind:close="onClose" bindtap="showBox">
+      <text>城市</text>
+      <image src="/images/sanjiao.png"></image>
+     </view>
+    <view class="list2">
+      <text>住家保姆</text>
+      <image src="/images/sanjiao.png"></image>
+    </view>
+    <view class="list3">
+      <text>年龄</text>
+      <image src="/images/sanjiao.png"></image>
+    </view>
+    <view class="list4">
+      <text>薪资</text>
+      <image src="/images/sanjiao.png"></image>
+    </view>
+  </view>
+ <!-- 推荐服务员栏目列表 -->
+  <view class="tuijian" wx:for="{{prolList}}" data-index="{{index}}" bindtap="toDatail" wx:key="{{index}}">
+      <view class="tuijian-img">
+        <image src="{{item.avatar_url}}"></image>
+      </view>
+      <view class="tuijian-xinxi">
+        <view class="tiele">
+          <text>{{item.name}}</text>
+          <text>{{item.age}}</text>
+        </view>
+        <view class="biaoqian">
+            <text wx:for="{{item.v_housekeeping_worker_characteristic}}" wx:key="{{index}}">{{item.sys_dic_name}}</text>
+        </view>
+        <view class="dizhi">
+            <text>{{item.current_city_name}}</text>
+            <text>|</text>
+            <text>{{item.education_background_type_name}}</text>
+        </view>
+      </view>
+      <view class="tuijian-btn">
+        <button size="mini" type="primary">预约</button>
+      </view>
+  </view>
+<!-- 弹出层 -->
+<van-popup show="{{ show }}" bind:close="onClose" position="left">
+  <view class="shuju">
+    <text class="{{item.act}}" wx:for="{{cityList}}" wx:key="{{index}}">{{item.titleOne}}</text>
+  </view>
+</van-popup>

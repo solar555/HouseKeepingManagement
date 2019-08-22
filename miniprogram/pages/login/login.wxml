@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+
+<view class="title-top">
+无忧家政
+  <view class="dengl">
+      <text class="biaoti">手机快捷登录</text>
+      <van-cell-group>
+       
+          <van-field type="number" label="手机号" placeholder="请输入手机号" border="{{ true }}" left-icon="phone-o" adjust-position maxlength="11"/>
+            <van-field type="number" label="验证码" placeholder="请输入验证码" border="{{ true }}" use-button-slot left-icon="comment-o" class="useriphn" adjust-position maxlength="6">
+              <van-button slot="button" size="small" type="primary" style="">发送验证码</van-button>
+          </van-field>
+      </van-cell-group>
+      <view>
+        <text class="lo-btn">立即登录</text>
+      </view>
+  </view>
+  <view class="wxsan">
+    <text class="xian"></text>
+      <!-- <image src="/images/wxicon.png"></image>
+      <text class="disanfang">微信登录</text> -->
+
+    <button open-type="getUserInfo" 
+            style="padding-top:20px"
+            class="disanfang"
+            lang="zh_CN" 
+            bindgetuserinfo="onGotUserInfo">
+            <image src="/images/wxicon.png"></image>
+            <text class="disanfang">微信登录</text>
+          </button>
+  </view>
+</view>
+
+

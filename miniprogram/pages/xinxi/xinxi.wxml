@@ -1,0 +1,30 @@
+<!--pages/xinxi/xinxi.wxml-->
+<view class="fenlei">
+  <van-cell title="所在城市" is-link value="广州市" arrow-direction="down" icon="location"/>
+  <van-cell title="服务类型" is-link value="护工" arrow-direction="down" icon="invition"/>
+</view>
+<view class="fenlei">
+  <van-cell title="开始时间" is-link value="2019-08-21" arrow-direction="down" icon="underway"/>
+  <van-cell title="结束时间" is-link value="2019-08-21" arrow-direction="down" icon="underway" />
+</view>
+<view class="grxx fenlei">
+  <!-- <van-cell-group>
+      <van-field label="联系人" left-icon="contact" border="{{ false }}"/>
+  </van-cell-group>
+  <van-cell-group>
+      <van-field label="联系电话" left-icon="contact" border="{{ false }}"/>
+  </van-cell-group> -->
+  <text class="title">王军</text>
+  <text class="fubiaoti">17458455455</text>
+  <text class="dizhi">陕西省西安市长安区九龙大道501号</text>
+  <image src="/images/left.png"></image>
+</view>
+<view class="fenlei">
+  <van-cell-group>
+        <van-field label="其他需求" left-icon="goods-collect" border="{{ false }}"/>
+    </van-cell-group>
+</view>
+<view class="btn-yuyue">
+  <text>立即预约</text>
+</view>
+

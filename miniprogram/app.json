@@ -1,36 +1,46 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/search/search",
-    "pages/me/me"
+    "pages/find/find",
+    "pages/myde/myde",
+    "pages/xqing/xqing",
+    "pages/xinxi/xinxi",
+    "pages/login/login",
+    "pages/zhaoren/zhaoren",
+
+    "pages/index_backup/index",
+    "pages/me_backup/me",
+    "pages/search_backup/search",
+    "pages/userConsole/userConsole"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "无忧家政",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
+  "tabBar":{
+    "color": "#888888",
+    "selectedColor": "#4585f5",
+    "list":[
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/wx-index.png",
+        "selectedIconPath":"images/wx-index-checked.png"
       },
       {
-        "pagePath": "pages/search/search",
-        "text": "找人"
+        "pagePath": "pages/find/find",
+        "text": "预约服务",
+        "iconPath": "images/wx-find.png",
+        "selectedIconPath": "images/wx-find-checked.png"
       },
       {
-        "pagePath": "pages/me/me",
-        "text": "我"
+        "pagePath": "pages/myde/myde",
+        "text": "我的",
+        "iconPath": "images/wx-myde.png",
+        "selectedIconPath": "images/wx-myde-ckecked.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,6 +1,57 @@
 <!--index.wxml-->
-<view class="container" wx:for="{{list}}" 
-      wx-for-index="index" 
-      wx-for-item="item">
-  {{index}}:{{item.name}}
-</view>
+<view>
+  <!-- banner广告图 -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" indicator-color="#fff" indicator-active-color="#4585f5">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.image_url}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 栏目列表 -->
+  <view class="item-box">
+      <view class="item">
+          <view class="item-list" wx:for="{{comList}}" bindtap="findRen" wx:key="{{index}}">
+            <image src="{{item.image_url}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+      </view>
+      <view class="item">
+          <view class="item-list" wx:for="{{comListTwo}}" bindtap="findRen" wx:key="{{index}}">
+            <image src="{{item.image_url}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+      </view>
+  </view>
+  
+  <!-- 推荐服务员栏目标题 -->
+  <view class="tj">
+    <text class="shuxian"></text>
+    <text class="shuxianbiaoti">推荐服务员</text>
+  </view>
+   <!-- 推荐服务员栏目列表 -->
+  <view class="tuijian" wx:for="{{prolList}}" data-index="{{index}}" bindtap="toDatail" wx:key="{{index}}">
+      <view class="tuijian-img">
+        <image src="{{item.avatar_url}}"></image>
+      </view>
+      <view class="tuijian-xinxi">
+        <view class="tiele">
+          <text>{{item.name}}</text>
+          <text>{{item.age}}</text>
+        </view>
+        <view class="biaoqian">
+            <text wx:for="{{item.v_housekeeping_worker_characteristic}}" wx:key="{{index}}">{{item.sys_dic_name}}</text>
+        </view>
+        <view class="dizhi">
+            <text>{{item.current_city_name}}</text>
+            <text>|</text>
+            <text>{{item.education_background_type_name}}</text>
+        </view>
+      </view>
+      <view class="tuijian-btn">
+        <button size="mini" type="primary">预约</button>
+      </view>
+  </view>
+ </view>
+

@@ -1,0 +1,48 @@
+/* pages/zhaoren/zhaoren.wxss */
+page{
+  padding: 130rpx 0 0 0;
+}
+.shaixuan{
+  display: flex;
+  justify-content:space-around;
+  flex-direction:row;
+  align-content: center;
+  background-color: #fff;
+  padding: 32rpx 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.shaixuan image{
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 0 0 10rpx;
+}
+.shaixuan text{
+  font-size: 32rpx;
+}
+.shuju{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  padding: 0 20rpx;
+}
+.shuju text{
+
+  width: 28%;
+  height: 68rpx;
+  text-align: center;
+  line-height: 68rpx;
+  display: block;
+  margin: 20rpx 0;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  background-color: #e6e6e6
+}
+.shuju text.active{
+  background-color: #4585f5;
+  color: #fff;
+}
+
