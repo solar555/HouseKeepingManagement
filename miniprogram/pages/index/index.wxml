@@ -31,7 +31,12 @@
     <text class="shuxianbiaoti">推荐服务员</text>
   </view>
    <!-- 推荐服务员栏目列表 -->
-  <view class="tuijian" wx:for="{{prolList}}" data-index="{{index}}" bindtap="toDatail" wx:key="{{index}}">
+  <view class="tuijian" 
+        wx:for="{{prolList}}" 
+        data-index="{{index}}" 
+        data-id="{{item.id}}" 
+        bindtap="toDatail" 
+        wx:key="id">
       <view class="tuijian-img">
         <image src="{{item.avatar_url}}"></image>
       </view>

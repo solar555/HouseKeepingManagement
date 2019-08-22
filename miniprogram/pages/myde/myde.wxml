@@ -18,9 +18,9 @@
       <open-data type="userAvatarUrl"></open-data>
   </view>
   <view class="xinxi">
-      <open-data type="userNickName"></open-data>
-      <open-data type="userGender" lang="zh_CN"></open-data>
-      <open-data type="userProvince" lang="zh_CN"></open-data>
+      <open-data type="userNickName"></open-data>\t
+      <open-data type="userGender" lang="zh_CN"></open-data>\t
+      <open-data type="userProvince" lang="zh_CN"></open-data>\t
       <open-data type="userCity" lang="zh_CN"></open-data>
   </view>
 </view>

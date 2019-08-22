@@ -30,10 +30,10 @@ Page({
     this.loadData();
   },
   toDatail: function (e) {
-    var index = e.currentTarget.dataset.index;
-    console.log(index)
+    var id = e.currentTarget.dataset.id;
+    console.log("id:", id)
     wx.navigateTo({
-      url: '/pages/xqing/xqing'
+      url: '/pages/xqing/xqing?id=' + id
     })
   },
   findRen: function (e) {
