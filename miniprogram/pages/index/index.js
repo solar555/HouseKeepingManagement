@@ -37,9 +37,10 @@ Page({
     })
   },
   findRen: function (e) {
+    let type_id = e.currentTarget.dataset.id;
     console.log(e)
     wx.navigateTo({
-      url: '/pages/zhaoren/zhaoren'
+      url: '/pages/zhaoren/zhaoren?type_id=' + type_id
     })
   },
   loadData: function () {

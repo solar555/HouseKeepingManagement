@@ -12,13 +12,13 @@
   <!-- 栏目列表 -->
   <view class="item-box">
       <view class="item">
-          <view class="item-list" wx:for="{{comList}}" bindtap="findRen" wx:key="{{index}}">
+          <view class="item-list" wx:for="{{comList}}" wx:key="id" bindtap="findRen" data-id="{{item.id}}">
             <image src="{{item.image_url}}"></image>
             <text>{{item.name}}</text>
           </view>
       </view>
       <view class="item">
-          <view class="item-list" wx:for="{{comListTwo}}" bindtap="findRen" wx:key="{{index}}">
+          <view class="item-list" wx:for="{{comListTwo}}" wx:key="id" bindtap="findRen" data-id="{{item.id}}">
             <image src="{{item.image_url}}"></image>
             <text>{{item.name}}</text>
           </view>
