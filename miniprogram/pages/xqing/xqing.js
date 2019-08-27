@@ -20,55 +20,6 @@ Page({
     that.getOneById(options.id);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
   toDatail: function (e) {
     var id = e.currentTarget.dataset.id;
     console.log(id)
@@ -79,11 +30,27 @@ Page({
   
   // 预约
   yuYueXinXi: function (e) {
-    var id = e.currentTarget.dataset.id;
-    console.log(id)
+    let that = this;
 
+    var worker_id = that.data.item.id;
+    if (!worker_id){
+      console.log("worker_id不能为空")
+      return;
+    }
+
+    // 未登录
+    if (!app.globalData.openid) {
+      console.log("openid为空")
+
+      wx.navigateTo({
+        url: '../login/login',
+      })
+
+      return;
+    }
+    
     wx.navigateTo({
-      url: '/pages/xinxi/xinxi?id=' + id
+      url: '/pages/xinxi/xinxi?id=' + worker_id
     })
   },
 

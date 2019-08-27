@@ -3,6 +3,8 @@ const server_config = require('config/server.js');
 
 App({
   onLaunch: function () {
+    let that = this;
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -21,12 +23,15 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
+    // 微信登录
     wx.login({
+
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 小程序登录，获得openid
+        that.loginMiniProCloud();
       }
     })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -48,6 +53,27 @@ App({
       }
     })
   },
+
+  // 小程序登录
+  loginMiniProCloud: function () {
+    let that = this;
+
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        // 2. 小程序登录，获取openid
+        that.globalData.openid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+        wx.showToast({
+          title: '[云函数] [login] 调用失败',
+        })
+      }
+    })
+  },
+
   globalData: {
     userInfo: null,
     token:null,

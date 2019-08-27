@@ -1,10 +1,10 @@
 <!--pages/xinxi/xinxi.wxml-->
 <view class="fenlei">
   <van-cell-group>
-        <van-field label="姓名" value="张三" left-icon="manager"/>
-        <van-field label="电话" value="18000000000" left-icon="phone"/>
-        <van-field label="所在城市" value="广州市" left-icon="location"/>
-        <van-field label="服务类型" value="护工" left-icon="invition"/>
+        <van-field label="姓名" value="{{housekeeping_worker.name}}" left-icon="manager"/>
+        <van-field label="电话" value="{{housekeeping_worker.phone}}" left-icon="phone"/>
+        <van-field label="所在城市" value="{{housekeeping_worker.current_city_name}}" left-icon="location"/>
+        <van-field label="服务类型" value="{{housekeeping_worker.type_name}}" left-icon="invition"/>
     </van-cell-group>
 </view>
 
@@ -15,24 +15,24 @@
 
   <view  class="fenlei">
   <picker mode="date" 
-          value="{{date_start}}" 
+          value="{{item.date_start}}" 
           start="2000-01-01" 
           end="2999-01-01" 
           bindchange="bindDateStartChange">
     <view class="picker">
-      开始时间: {{date_start}}
+      开始时间: {{item.date_start}}
     </view>
   </picker>
 </view>
 
 <view class="section">
   <picker mode="date" 
-          value="{{date_end}}" 
+          value="{{item.date_end}}" 
           start="2000-01-01" 
           end="2999-01-01" 
           bindchange="bindDateEndChange">
     <view class="picker">
-      结束时间: {{date_end}}
+      结束时间: {{item.date_end}}
     </view>
   </picker>
 </view>
@@ -41,10 +41,17 @@
 </view>
 <view class="fenlei">
   <van-cell-group>
-        <van-field label="其他需求" left-icon="goods-collect" border="{{ false }}"/>
+        <van-field label="其他需求" 
+                   bindinput="inputChange" 
+                   data-name="item.remark"
+                   value="{{item.remark}}" 
+                   left-icon="goods-collect" 
+                   border="{{ false }}"/>
     </van-cell-group>
+
+    <!-- <input type="text" data-name="item.remark" value="{{item.remark}}" bindinput="inputChange" /> -->
 </view>
 <view class="btn-yuyue">
-  <text>立即预约</text>
+  <text bindtap="onSubmit">立即预约</text>
 </view>
 
