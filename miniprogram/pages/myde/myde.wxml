@@ -1,7 +1,7 @@
 <!--pages/myde/myde.wxml-->
 
 <!-- 登录界面 -->
-<view wx:if="{{userInfo==null}}" class="wode-box" bindtap="goLogin">
+<view wx:if="{{isHide}}" class="wode-box" bindtap="goLogin">
   <view class="touxiang">
       <image src="/images/toux.png"></image>
   </view>

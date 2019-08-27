@@ -11,7 +11,8 @@
     "pages/index_backup/index",
     "pages/me_backup/me",
     "pages/search_backup/search",
-    "pages/userConsole/userConsole"
+    "pages/userConsole/userConsole",
+    "pages/deployFunctions/deployFunctions"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

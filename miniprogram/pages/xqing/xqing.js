@@ -2,10 +2,6 @@
 const app = getApp()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     item: {},
     prolList: []
@@ -72,6 +68,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   toDatail: function (e) {
     var id = e.currentTarget.dataset.id;
     console.log(id)
@@ -79,11 +76,17 @@ Page({
       url: '/pages/xqing/xqing?id=' + id
     })
   },
-  yuYueXinXi:function(e){
+  
+  // 预约
+  yuYueXinXi: function (e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+
     wx.navigateTo({
-      url: '/pages/xinxi/xinxi'
+      url: '/pages/xinxi/xinxi?id=' + id
     })
   },
+
   loadData: function () {
     let that = this;
 
@@ -117,6 +120,7 @@ Page({
       }
     });
   },
+  
   getOneById: function (id) {
     let that = this;
 

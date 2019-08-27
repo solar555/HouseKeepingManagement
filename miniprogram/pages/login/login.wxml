@@ -24,7 +24,7 @@
             style="padding-top:20px"
             class="disanfang"
             lang="zh_CN" 
-            bindgetuserinfo="onGotUserInfo">
+            bindgetuserinfo="onMiniProAuth">
             <image src="/images/wxicon.png"></image>
             <text class="disanfang">微信登录</text>
           </button>
