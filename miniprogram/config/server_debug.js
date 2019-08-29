@@ -1,11 +1,11 @@
 const host = "http://housekeeping.nodepointech.com";
 
 module.exports = {
-  port: 84,
+  port: 85,
   app_name: "housekeeping",
   refund: "C",
   mysql: {
-    host: "119.29.79.193",
+    host: "192.168.1.220",
     port: "36306",
     user: "root",
     password: "root123",
@@ -13,14 +13,14 @@ module.exports = {
     connectionLimit: 50
   },
   redis: {
-    host: "119.29.79.193",
+    host: "192.168.1.220",
     port: "6380",
     db: 3,
     password: "wf_110"
   },
   webapi: {
-    host: "119.29.79.193",
-    port: 84
+    host: "192.168.1.220",
+    port: 85
   },
   token: {
     secret: "secret:housekeeping"

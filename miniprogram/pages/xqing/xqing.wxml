@@ -49,7 +49,7 @@
       <view class="tuijian-xinxi">
         <view class="tiele">
           <text>{{item.name}}</text>
-          <text>{{item.age}}</text>
+          <text>{{item.age}}岁</text>
         </view>
         <view class="biaoqian">
             <text wx:for="{{item.v_housekeeping_worker_characteristic}}" wx:key="{{index}}">{{item.sys_dic_name}}</text>

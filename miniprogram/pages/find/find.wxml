@@ -1,28 +1,10 @@
 <!--pages/find/find.wxml-->
-<van-tabs bind:click="onClick">
-  <van-tab title="全部服务">
-    <view class="zanwujilu">
-      <image src="/images/wujilu.png"></image>
-      <text>暂无服务记录~~</text>
-    </view>
-  </van-tab>
-  <van-tab title="待付款">
-   <view class="zanwujilu">
-      <image src="/images/wujilu.png"></image>
-      <text>暂无服务记录~~</text>
-    </view>
-  </van-tab>
-  <van-tab title="服务中">
-   <view class="zanwujilu">
-      <image src="/images/wujilu.png"></image>
-      <text>暂无服务记录~~</text>
-    </view>
-  </van-tab>
-  <van-tab title="已取消">
-   <view class="zanwujilu">
-      <image src="/images/wujilu.png"></image>
-      <text>暂无服务记录~~</text>
-    </view>
-  </van-tab>
-</van-tabs>
+<!-- 导入模板 -->
+<import src="listTemplate.wxml" />
 
+<van-tabs bind:click="onClick">
+<template is="listTemplate" data="{{title:'全部', boxHeight:boxHeight, list: list}}" />
+<template is="listTemplate" data="{{title:'待付款', boxHeight:boxHeight, list: sub_list}}" />
+<template is="listTemplate" data="{{title:'服务中', boxHeight:boxHeight, list: sub_list}}" />
+<template is="listTemplate" data="{{title:'已取消', boxHeight:boxHeight, list: sub_list}}" />
+</van-tabs>

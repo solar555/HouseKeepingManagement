@@ -32,19 +32,19 @@ Page({
   yuYueXinXi: function (e) {
     let that = this;
 
+    this.onCheckAuthorization();
+
     var worker_id = that.data.item.id;
     if (!worker_id){
       console.log("worker_id不能为空")
       return;
     }
 
+    console.log("预约 app.globalData.openid：", app.globalData.openid)
+
     // 未登录
     if (!app.globalData.openid) {
       console.log("openid为空")
-
-      wx.navigateTo({
-        url: '../login/login',
-      })
 
       return;
     }
@@ -113,5 +113,26 @@ Page({
         // wx.hideLoading();
       }
     });
+  },
+
+  onCheckAuthorization: function (cb) {
+    let that = this;
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          console.log("查看是否授权 success 已授权")
+        } else {
+          console.log("用户没有授权，userInfo:", app.globalData.userInfo)
+          wx.switchTab({
+            url: '../myde/myde',
+          })
+
+        }
+      },
+      fail: function (res) {
+        console.log("查看是否授权 fail")
+      }
+    })
   }
 })

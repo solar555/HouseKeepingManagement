@@ -1,0 +1,36 @@
+<template name="listTemplate">
+  <van-tab title="{{title}}">
+   <view wx:if="{{list.length == 0}}" class="zanwujilu">
+      <image src="/images/wujilu.png"></image>
+      <text>暂无服务记录~~</text>
+    </view>
+    <view wx:else style="flex:1; height:{{boxHeight}}px">
+      <scroll-view scroll-y='true' >
+        <view class="tuijian" 
+          wx:for="{{list}}" >
+          <view class="tuijian-img">
+            <image src="{{item.avatar_url}}"></image>
+          </view>
+          <view class="tuijian-xinxi">
+            <view class="tiele">
+              <text>{{item.worker_name}}</text>
+              <text> </text>
+              <text>{{item.age}}岁</text>
+              <text> </text>
+              <text> {{item.worker_current_city_name}}</text>
+            </view>
+            <view class="biaoqian">
+              <text >{{item.worker_type_name}}</text>
+            </view>
+            <view class="dizhi">
+              <text>服务时间：</text>
+              <text>{{item.date_start}}</text>
+              <text>-</text>
+              <text>{{item.date_end}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+</template>
