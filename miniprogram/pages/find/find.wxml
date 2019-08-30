@@ -6,5 +6,6 @@
 <template is="listTemplate" data="{{title:'全部', boxHeight:boxHeight, list: list}}" />
 <template is="listTemplate" data="{{title:'待付款', boxHeight:boxHeight, list: sub_list}}" />
 <template is="listTemplate" data="{{title:'服务中', boxHeight:boxHeight, list: sub_list}}" />
-<template is="listTemplate" data="{{title:'已取消', boxHeight:boxHeight, list: sub_list}}" />
+<template is="listTemplate" data="{{title:'已取消', boxHeight:boxHeight, list: sub_list}}" >
+</template>
 </van-tabs>

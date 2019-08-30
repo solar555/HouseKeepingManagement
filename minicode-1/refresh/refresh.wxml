@@ -1,0 +1,25 @@
+<view class="container">
+<view style="height:200px; background-color:red">1111111111111111111</view>
+<view style="height:200px; background-color:blue">22222222222222222</view>
+<view style="height:200px; background-color:red">3333333333333333</view>
+<view style="height:200px; background-color:blue">444444444444444</view>
+</view>
+
+<view class="container">
+    <view id="loading" wx:if="{{loadingHidden}}">
+    <!-- <view id="loading"> -->
+        <view id="loading-center">
+            <view id="loading-center-absolute">
+                <view class="object" id="object_one"></view>
+                <view class="object" id="object_two"></view>
+                <view class="object" id="object_three"></view>
+                <view class="object" id="object_four"></view>
+                <view class="object" id="object_five"></view>
+                <view class="object" id="object_six"></view>
+                <view class="object" id="object_seven"></view>
+                <view class="object" id="object_eight"></view>
+                <view class="object" id="object_big"></view>
+            </view>
+        </view>
+    </view>
+</view>

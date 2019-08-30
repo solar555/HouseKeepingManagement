@@ -11,7 +11,7 @@ Page({
       date_start:"",
       date_end:"",
       remark:"",
-      state_type_id: 26
+      state_type_id: 506
     }
   },
 

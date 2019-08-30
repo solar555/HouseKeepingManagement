@@ -3,6 +3,11 @@ let app = getApp();
 
 Page({
   data: {
+    currentPage: 1,
+    pageSize: 10,
+    totalPages: 0,
+    showBottomLine: false,
+
     query: {
       booking_person_openid: "",
       housekeeping_worker_id: 0,
@@ -35,6 +40,7 @@ Page({
 
   onCheckAuthorization: function (cb) {
     let that = this;
+
     // 查看是否授权
     wx.getSetting({
       success: function (res) {
@@ -56,33 +62,59 @@ Page({
       },
       fail: function (res) {
         console.log("查看是否授权 fail")
+      },
+
+      complete: function (res) {
+        if (cb)
+          cb();
+        // wx.hideLoading();
       }
     })
   },
 
-  loadData: function () {
+  loadData: function (override, cb) {
+    this.getList(true);
+  },
+
+  getList: function (override, cb) {
     let that = this;
 
     // 预约列表
     wx.request({
-      url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getHousekeepingRequirementList',
+      url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getHousekeepingRequirementListByPage?'
+        + 'currentPage=' + that.data.currentPage
+        + '&pageSize=' + that.data.pageSize,
       method: 'POST',
       header: { 'content-type': 'application/json' },
       data: that.data.query,
       success: function (res) {
-        if (res.statusCode == 200) {
-          that.setData({ list: res.data.list })
-          console.log("list:", res.data.list);
+        if (res.statusCode == 500) {
+          wx.showToast({
+            title: '系统错误',
+          })
+          console.log('error:', res)
+          return;
         }
-        else
-          console.log('error')
+
+        let new_list = that.data.list.concat(res.data.list);
+        that.setData({
+          list: override ? res.data.list : new_list,
+          currentPage: that.data.currentPage + 1,
+          totalPages: res.data.totalPages
+        })
+        console.log("list:", res.data.list);
+        
       },
+
       fail: function (res) {
         wx.showToast({
           title: '系统错误',
         })
       },
+
       complete: function (res) {
+        if(cb)
+          cb();
         // wx.hideLoading();
       }
     });
@@ -121,5 +153,47 @@ Page({
     this.setData({
       sub_list: sub_list
     })
-  }
+  },
+
+  onShow:function(e){
+    this.onCheckAuthorization();
+  },
+
+  // 下拉刷新
+  onPullDownRefresh() {
+    let that = this;
+    if (!this.loading) {
+      // 下拉刷新时，从第一页开始查询
+      that.setData({
+        currentPage: 1
+      })
+      this.getList(true, () => {
+        // 处理完成后，终止下拉刷新
+        wx.stopPullDownRefresh()
+      })
+    }
+  },
+
+  // 上拉刷新
+  onReachBottom: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    if (!this.loading && this.data.currentPage <= this.data.totalPages) {
+      this.getList(false, () => {
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 300);
+      })
+    } else {
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 300);
+
+      wx.showToast({
+        title: '没有更多数据。',
+      })
+    }
+  },
 })

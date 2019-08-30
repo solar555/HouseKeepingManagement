@@ -18,9 +18,11 @@
               <text>{{item.age}}岁</text>
               <text> </text>
               <text> {{item.worker_current_city_name}}</text>
+              <text> </text>
+              <text> {{item.worker_type_name}}</text>
             </view>
             <view class="biaoqian">
-              <text >{{item.worker_type_name}}</text>
+              <text>{{item.state_type_name}}</text>
             </view>
             <view class="dizhi">
               <text>服务时间：</text>
@@ -31,6 +33,14 @@
           </view>
         </view>
       </scroll-view>
+
+      <view class='m2'>
+        <view class='m2_tit'>我是有底线的</view>
+        <view class="coupon-line">
+          <view></view>
+          <view></view>
+        </view>
+      </view>
     </view>
   </van-tab>
 </template>

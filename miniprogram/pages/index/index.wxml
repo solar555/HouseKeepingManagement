@@ -9,6 +9,7 @@
       </swiper-item>
     </block>
   </swiper>
+
   <!-- 栏目列表 -->
   <view class="item-box">
       <view class="item">
@@ -32,7 +33,7 @@
   </view>
    <!-- 推荐服务员栏目列表 -->
   <view class="tuijian" 
-        wx:for="{{prolList}}" 
+        wx:for="{{list}}" 
         data-index="{{index}}" 
         data-id="{{item.id}}" 
         bindtap="toDatail" 
@@ -57,6 +58,13 @@
       <view class="tuijian-btn">
         <button size="mini" type="primary">预约</button>
       </view>
+  </view>
+  <view class='m2'>
+    <view class='m2_tit'>我是有底线的</view>
+    <view class="coupon-line">
+      <view></view>
+      <view></view>
+    </view>
   </view>
  </view>
 
