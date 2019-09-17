@@ -1,9 +1,19 @@
 //app.js
 const server_config = require('config/server.js');
+const util_date = require("./utils/util_date.js");
 
 App({
   onLaunch: function () {
     let that = this;
+
+    let now = new Date();
+    let now_str = util_date.fromDateToStr(now, 'yyyy-MM-dd')
+    let next_month = new Date();
+    next_month.setMonth(next_month.getMonth() + 1)
+    let next_month_str = util_date.fromDateToStr(next_month, 'yyyy-MM-dd');
+    
+    console.log("now_str:", now_str)
+    console.log("next_month_str:", next_month_str)
 
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')

@@ -96,6 +96,10 @@ Page({
           return;
         }
 
+        console.log("that.data.currentPage:", that.data.currentPage)
+        console.log("that.data.pageSize:", that.data.pageSize)
+        console.log("res.data.list:", res.data.list)
+
         let new_list = that.data.list.concat(res.data.list);
         that.setData({
           list: override ? res.data.list : new_list,
@@ -155,8 +159,13 @@ Page({
     })
   },
 
-  onShow:function(e){
+  onShow: function (e) {
+    let that = this;
+
     this.onCheckAuthorization();
+    that.setData({
+      currentPage: 1
+    })
   },
 
   // 下拉刷新

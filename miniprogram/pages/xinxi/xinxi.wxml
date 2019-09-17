@@ -10,34 +10,22 @@
 
 <view class="fenlei">
   <van-cell-group>
-  <!-- <van-cell title="开始时间" is-link value="2019-08-21" arrow-direction="down" icon="underway"/>
-  <van-cell title="结束时间" is-link value="2019-08-21" arrow-direction="down" icon="underway" /> -->
+    <picker mode="date" 
+            value="{{item.date_start}}" 
+            start="2000-01-01" 
+            end="2999-01-01" 
+            bindchange="bindDateStartChange">
+        <van-field label="开始时间:" value="{{item.date_start}}" left-icon="invition"/>
+    </picker>
 
-  <view  class="fenlei">
-  <picker mode="date" 
-          value="{{item.date_start}}" 
-          start="2000-01-01" 
-          end="2999-01-01" 
-          bindchange="bindDateStartChange">
-    <view class="picker">
-      开始时间: {{item.date_start}}
-    </view>
-  </picker>
-</view>
-
-<view class="section">
-  <picker mode="date" 
-          value="{{item.date_end}}" 
-          start="2000-01-01" 
-          end="2999-01-01" 
-          bindchange="bindDateEndChange">
-    <view class="picker">
-      结束时间: {{item.date_end}}
-    </view>
-  </picker>
-</view>
-
-    </van-cell-group>
+    <picker mode="date" 
+            value="{{item.date_end}}" 
+            start="2000-01-01" 
+            end="2999-01-01" 
+            bindchange="bindDateEndChange">
+        <van-field label="结束时间:" value="{{item.date_end}}" left-icon="invition"/>
+    </picker>
+  </van-cell-group>
 </view>
 <view class="fenlei">
   <van-cell-group>

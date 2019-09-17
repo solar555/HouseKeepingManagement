@@ -1,6 +1,6 @@
 // pages/xinxi/xinxi.js
 const app = getApp();
-
+const util_date = require("../../utils/util_date.js");
 Page({
   data: {
     housekeeping_worker:{},
@@ -8,18 +8,34 @@ Page({
       id:0,
       booking_person_openid:0,
       housekeeping_worker_id:0,
-      date_start:"",
-      date_end:"",
+      date_start: "",
+      date_end: "",
       remark:"",
       state_type_id: 506
     }
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this;
+
+    let date_start = new Date();
+    let date_start_str = util_date.fromDateToStr(date_start, 'yyyy-MM-dd')
+    let date_end = new Date();
+    date_end.setMonth(date_end.getMonth() + 1)
+    let date_end_str = util_date.fromDateToStr(date_end, 'yyyy-MM-dd');
+
+    console.log("date_start_str:", date_start_str)
+    console.log("date_end_str:", date_end_str)
+
+    that.setData({
+      "item.date_start": date_start_str,
+      "item.date_end": date_end_str
+    })
     
     wx.setNavigationBarTitle({
       title: '预约信息'
