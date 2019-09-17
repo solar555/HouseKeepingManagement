@@ -3,6 +3,7 @@ const app = getApp()
 
 Page({
   data: {
+    booked:false,
     item: {},
     prolList: []
   },
@@ -27,10 +28,18 @@ Page({
       url: '/pages/xqing/xqing?id=' + id
     })
   },
+
+  makePhoneCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: '15602328806'
+    })
+  },
   
   // 预约
   yuYueXinXi: function (e) {
     let that = this;
+
+    console.log("dataset:",e.currentTarget.dataset.id)
 
     this.onCheckAuthorization();
 
@@ -87,6 +96,40 @@ Page({
       }
     });
   },
+
+  getOneHousekeepingRequirementByOpenidAndWorkerId: function (worker_id) {
+    let that = this;
+    console.log("worker_id:", worker_id);
+    console.log("app.globalData.openid:", app.globalData.openid);
+
+    // 预约信息
+    wx.request({
+      url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getOneHousekeepingRequirementByOpenidAndWorkerId?'
+        + 'booking_person_openid=' + app.globalData.openid
+        + '&housekeeping_worker_id=' + worker_id,
+      method: 'GET',
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        if (res.statusCode == 200) {
+          if (res.data) {
+            that.setData({ booked: true })
+            console.log("找到预约信息:", res.data);
+          }
+          console.log("找到预约信息:", res.data);
+        }
+        else
+          console.log('error')
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '系统错误',
+        })
+      },
+      complete: function (res) {
+        // wx.hideLoading();
+      }
+    });
+  },
   
   getOneById: function (id) {
     let that = this;
@@ -100,6 +143,9 @@ Page({
         if (res.statusCode == 200) {
           that.setData({ item: res.data })
           console.log("item:", res.data);
+
+          // 查看是否预约
+          that.getOneHousekeepingRequirementByOpenidAndWorkerId(res.data.id);
         }
         else
           console.log('error')

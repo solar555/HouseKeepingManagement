@@ -76,13 +76,14 @@ Page({
       title: '服务人员列表'
     })
 
-    if (options.type_id) {
-      that.setData({ 'params.type_id':options.type_id })
+    // if (options.type_id) {
+    //   that.setData({ 'params.type_id':options.type_id })
 
-      this.searchData(this.data.params);
-    } else
-      this.searchData();
+    //   this.searchData(this.data.params);
+    // } else
+    //   this.searchData();
 
+    this.searchData();
     this.loadData();
   },
 

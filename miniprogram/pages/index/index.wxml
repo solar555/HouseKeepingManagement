@@ -56,7 +56,7 @@
         </view>
       </view>
       <view class="tuijian-btn">
-        <button size="mini" type="primary">预约</button>
+        <button size="mini" type="primary">查看</button>
       </view>
   </view>
   <view class='m2'>

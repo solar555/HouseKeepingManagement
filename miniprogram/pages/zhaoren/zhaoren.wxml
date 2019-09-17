@@ -1,13 +1,13 @@
 <!--pages/zhaoren/zhaoren.wxml-->
 <view class="shaixuan">
-    <view class="list1" 
+    <!-- <view class="list1" 
           show="{{ show }}" 
           bind:close="onClose" 
           data-id="1"
           bindtap="showBox">
       <text>{{current_city}}</text>
       <image src="/images/sanjiao.png"></image>
-     </view>
+     </view> -->
     <view class="list2"
           data-id="2"
           show="{{ show }}" 

@@ -86,8 +86,11 @@ Page({
 
       // 授权成功后，通过改变isShow的值，让实现页面显示出来，把授权页面隐藏起来
       that.setData({
-        isShow: false
+        isShow: false,
+        userInfo: app.globalData.userInfo
       });
+      console.log("isShow:",this.isShow);
+      app.globalData.openid = res.result.openid
     } else {
       // 用户按了拒绝按钮
       wx.showModal({
@@ -142,11 +145,16 @@ Page({
 
   // 2. 小程序登录(云函数login，获取openid)
   loginMiniProCloud: function () {
+    let that = this;
     wx.cloud.callFunction({
       name: 'login',
       data: {},
       success: res => {
         app.globalData.openid = res.result.openid
+
+        that.setData({
+          isShow: false
+        })
 
         // 2. 小程序登录，获取openid后，业务登录（登录内部业务服务器）
         this.loginInternal(app.globalData.openid);

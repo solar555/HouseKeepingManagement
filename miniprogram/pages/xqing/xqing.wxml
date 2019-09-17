@@ -26,9 +26,9 @@
             data-index="{{index}}"
             >{{item.sys_dic_name}}</text>
     </view>
-    <view class="fanx-btn">
+    <!-- <view class="fanx-btn">
       <text class="btn">转发分享</text>
-    </view>
+    </view> -->
 </view>
 <!-- 推荐服务员 -->
 <!-- 推荐服务员栏目标题 -->
@@ -61,11 +61,12 @@
         </view>
       </view>
       <view class="tuijian-btn">
-        <button size="mini" type="primary">预约</button>
+        <button size="mini" type="primary" >查看</button>
       </view>
   </view>
 <!-- 底部按钮 -->
 <view class="fooder-btn">
-  <text class="tel-btn">电话咨询</text>
-  <text class="yuyue-btn" bindtap="yuYueXinXi">预约此服务员</text>
+  <text class="tel-btn" bindtap="makePhoneCall">电话咨询</text>
+  <!-- <text class="yuyue-btn" bindtap="yuYueXinXi" disable="{{canBook?'':disable}}" >{{canBook?'预约此服务员':'已预约'}}</text> -->
+    <button class="yuyue-btn" bindtap="yuYueXinXi" disabled="{{booked}}" >{{booked?'已预约':'预约'}}</button>
 </view>
