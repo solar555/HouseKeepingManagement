@@ -5,21 +5,21 @@ module.exports = {
   app_name: "housekeeping",
   refund: "C",
   mysql: {
-    host: "119.29.79.193",
-    port: "36306",
-    user: "root",
-    password: "root123",
+    host: "106.53.95.213",
+    port: "3306",
+    user: "1zdjDB",
+    password: "RootDB190831",
     database: "housekeeping",
     connectionLimit: 50
   },
   redis: {
-    host: "119.29.79.193",
+    host: "106.53.95.213",
     port: "6380",
     db: 3,
     password: "wf_110"
   },
   webapi: {
-    host: "119.29.79.193",
+    host: "106.53.95.213",
     port: 84
   },
   token: {
