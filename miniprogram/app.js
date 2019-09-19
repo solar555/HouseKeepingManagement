@@ -90,6 +90,7 @@ App({
     openid:null,
     server_port: server_config.port,
     server_host: server_config.mysql.host,
-    server_base_url: 'http://' + server_config.mysql.host + ':' + server_config.port,
+    server_base_url: 'https://' + server_config.mysql.host,
+    // server_base_url: 'https://' + server_config.mysql.host + ':' + server_config.port,
   }
 })
