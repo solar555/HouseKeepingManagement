@@ -13,6 +13,7 @@ Page({
     current_salary_range: "薪资",
 
     params: {
+      booking_person_openid: app.globalData.openid,
       type_id: 0,
       current_city_id: 0,
       salary_range_type_id: 0,
@@ -83,7 +84,9 @@ Page({
     // } else
     //   this.searchData();
 
-    this.searchData();
+    that.setData({ 'params.booking_person_openid': app.globalData.openid })
+    console.log("app.globalData.openid:", that.data.params.booking_person_openid)
+    this.searchData(that.data.params);
     this.loadData();
   },
 
@@ -366,7 +369,7 @@ Page({
     console.log("params:",params)
 
     wx.request({
-      url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getHousekeepingWorkerList',
+      url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getHousekeepingWorkerListWithIsBooked',
       method: 'POST',
       header: { 'content-type': 'application/json' },
       data: params,
@@ -384,7 +387,8 @@ Page({
         })
       },
       complete: function (res) {
-
+        console.log('完成')
+        console.log('res', res)
         // wx.hideLoading();
       }
     })

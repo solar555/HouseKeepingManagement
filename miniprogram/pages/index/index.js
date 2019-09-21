@@ -196,12 +196,12 @@ Page({
       this.getWorkerList(false,() => {
         setTimeout(function () {
           wx.hideLoading()
-        }, 300);
+        }, 2000);
       })
     } else {
       setTimeout(function () {
         wx.hideLoading()
-      }, 300);
+      }, 2000);
 
       wx.showToast({
         title: '没有更多数据。',

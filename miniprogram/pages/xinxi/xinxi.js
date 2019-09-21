@@ -15,8 +15,6 @@ Page({
     }
   },
 
-
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -74,6 +72,7 @@ Page({
       fail: function (res) {
         wx.showToast({
           title: '系统错误',
+          duration: 2000
         })
       },
       complete: function (res) {
@@ -136,16 +135,18 @@ Page({
         if (res.statusCode == 500) {
           wx.showToast({
             title: '系统错误',
+            duration: 2000
           })
           return;
         }
 
         wx.navigateBack({
-          delta: 1
+          delta: 2
         })
 
         wx.showToast({
           title: '预约成功',
+          duration: 2000
         })
 
         console.log("预约成功:");
@@ -154,6 +155,7 @@ Page({
       fail: function (res) {
         wx.showToast({
           title: '系统错误',
+          duration: 2000
         })
       },
       complete: function (res) {

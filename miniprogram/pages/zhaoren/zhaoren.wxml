@@ -57,7 +57,7 @@
         </view>
       </view>
       <view class="tuijian-btn">
-        <button size="mini" type="primary">预约</button>
+        <button size="mini" type="primary">{{item.is_booked?'已预约':'预约'}}</button>
       </view>
   </view>
 <!-- 弹出层 -->
