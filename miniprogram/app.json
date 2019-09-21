@@ -1,42 +1,36 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/find/find",
-    "pages/myde/myde",
-    "pages/xqing/xqing",
-    "pages/xinxi/xinxi",
+    "pages/myReservationTab/myReservationTab",
+    "pages/meTab/meTab",
+    "pages/workerDetail/workerDetail",
+    "pages/reservationDetail/reservationDetail",
     "pages/login/login",
-    "pages/zhaoren/zhaoren",
-
-    "pages/index_backup/index",
-    "pages/me_backup/me",
-    "pages/search_backup/search",
-    "pages/userConsole/userConsole",
-    "pages/deployFunctions/deployFunctions"
+    "pages/workerList/workerList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "一指到家家政",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
+  "tabBar": {
     "color": "#888888",
     "selectedColor": "#4585f5",
-    "list":[
+    "list": [
       {
-        "pagePath":"pages/index/index",
-        "text":"首页",
-        "iconPath":"images/wx-index.png",
-        "selectedIconPath":"images/wx-index-checked.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/wx-index.png",
+        "selectedIconPath": "images/wx-index-checked.png"
       },
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/myReservationTab/myReservationTab",
         "text": "预约服务",
         "iconPath": "images/wx-find.png",
         "selectedIconPath": "images/wx-find-checked.png"
       },
       {
-        "pagePath": "pages/myde/myde",
+        "pagePath": "pages/meTab/meTab",
         "text": "我的",
         "iconPath": "images/wx-myde.png",
         "selectedIconPath": "images/wx-myde-ckecked.png"

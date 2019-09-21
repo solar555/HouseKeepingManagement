@@ -1,0 +1,11 @@
+<!--pages/find/find.wxml-->
+<!-- 导入模板 -->
+<import src="listTemplate.wxml" />
+
+<van-tabs bind:click="onClick">
+<template is="listTemplate" data="{{title:'全部', boxHeight:boxHeight, list: list}}" />
+<template is="listTemplate" data="{{title:'预约中', boxHeight:boxHeight, list: sub_list}}" />
+<template is="listTemplate" data="{{title:'服务中', boxHeight:boxHeight, list: sub_list}}" />
+<template is="listTemplate" data="{{title:'已取消', boxHeight:boxHeight, list: sub_list}}" >
+</template>
+</van-tabs>

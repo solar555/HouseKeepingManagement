@@ -25,17 +25,17 @@ Page({
     // 3. 推荐服务员列表
     list: []
   },
-  
+
   onLoad: function () {
     this.loadData();
-    console.log("server_base_url:",app.globalData.server_base_url)
+    console.log("server_base_url:", app.globalData.server_base_url)
   },
-  
+
   toDatail: function (e) {
     var id = e.currentTarget.dataset.id;
     console.log("id:", id)
     wx.navigateTo({
-      url: '/pages/xqing/xqing?id=' + id
+      url: '/pages/workerDetail/workerDetail?id=' + id
     })
   },
 
@@ -43,7 +43,7 @@ Page({
     let type_id = e.currentTarget.dataset.id;
     console.log(e)
     wx.navigateTo({
-      url: '/pages/zhaoren/zhaoren?type_id=' + type_id
+      url: '/pages/workerList/workerList?type_id=' + type_id
     })
   },
 
@@ -56,7 +56,7 @@ Page({
         });
       });
     });
-    
+
   },
 
   // 获取顶部广告
@@ -81,7 +81,7 @@ Page({
         })
       },
       complete: function (res) {
-        if(cb)
+        if (cb)
           cb();
         // wx.hideLoading();
       }
@@ -91,7 +91,7 @@ Page({
   // 获取家政工作类型
   getWorkerTypeList: function (cb) {
     let that = this;
-    
+
     wx.request({
       url: app.globalData.server_base_url + '/app/sysSystemManagement/getHmHousekeepingWorkerTypeList',
       method: 'GET',
@@ -123,7 +123,7 @@ Page({
     let that = this;
     wx.request({
       url: app.globalData.server_base_url + '/app/hmHousekeepingManagement/getHousekeepingWorkerListByPage?'
-        + 'currentPage=' + that.data.currentPage 
+        + 'currentPage=' + that.data.currentPage
         + '&pageSize=' + that.data.pageSize,
       method: 'POST',
       header: { 'content-type': 'application/json' },
@@ -138,9 +138,9 @@ Page({
         if (res.statusCode == 200) {
           console.log("that.data.list:", that.data.list)
           let new_list = that.data.list.concat(res.data.list);
-          console.log("new_list:",new_list)
+          console.log("new_list:", new_list)
 
-          that.setData({ 
+          that.setData({
             list: override ? res.data.list : new_list,
             currentPage: that.data.currentPage + 1,
             totalPages: res.data.totalPages
@@ -181,7 +181,7 @@ Page({
   },
 
   // 上拉刷新
-  onReachBottom: function() {
+  onReachBottom: function () {
     console.log("触底刷新")
     // 下拉触底，先判断是否有请求正在进行中
     // 以及检查当前请求页数是不是小于数据总页数，如符合条件，则发送请求
@@ -193,7 +193,7 @@ Page({
 
     if (!this.loading && this.data.currentPage <= this.data.totalPages) {
       console.log("进入触底刷新")
-      this.getWorkerList(false,() => {
+      this.getWorkerList(false, () => {
         setTimeout(function () {
           wx.hideLoading()
         }, 2000);

@@ -1,0 +1,43 @@
+/* pages/find/find.wxss */
+van-tabs{
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
+}
+.zanwujilu{
+  display: flex;
+  align-items:center;
+  flex-direction:column;
+  margin: 220rpx 0 0 0;
+}
+.zanwujilu image{
+  width: 450rpx;
+  height: 384rpx;
+}
+.zanwujilu text{
+  display: block;
+  margin: 40rpx 0 0 0;
+  font-size: 28rpx;
+  color: #888;
+}
+
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.m2{
+  width:100%;
+  height:60rpx;
+}
+.m2_tit{
+  text-align: center;
+  font-size:30rpx;
+  color:rgb(110, 105, 105);
+  padding-top:10rpx;
+}
+
+.coupon-line{
+  position:relative;
+  width:100%;
+  border-top:4rpx dashed rgb(110, 108, 108);
+}

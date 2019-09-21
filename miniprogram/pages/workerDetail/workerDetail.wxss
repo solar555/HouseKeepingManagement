@@ -1,0 +1,118 @@
+/* 底部按钮 */
+page{
+  padding: 0 0 136rpx 0;
+}
+.fooder-btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  background-color: #fff;
+  padding: 20rpx 0;
+  box-shadow: 0 -5rpx 20rpx #cecece;
+}
+.fooder-btn .yuyue-btn{
+  width: 50%;
+  height: 96rpx;
+  background-color: #4585f5;
+  border-top-right-radius: 46rpx;
+  border-bottom-right-radius: 46rpx;
+  text-align: center;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.fooder-btn .tel-btn{
+  width: 50%;
+  height: 96rpx;
+  background: -webkit-linear-gradient(left, #4cdb9b, #32cf8a);
+  background: linear-gradient(to right, #4cdb9b, #32cf8a);
+  border-top-left-radius: 46rpx;
+  border-bottom-left-radius: 46rpx;
+  text-align: center;
+  line-height: 96rpx;
+   font-size: 32rpx;
+  color: #fff;
+}
+/* 个人简历信息 */
+.jianli-box{
+  width: 640rpx;
+  height: 680rpx;
+  background-color: #fff;
+  box-shadow: 0 0 26rpx #ccc;
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.jianli-box .touxiang{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.jianli-box .touxiang image{
+  width: 100%;
+  height: 100%;
+}
+.jianli-box .xinxi1{
+  margin: 12rpx 0 ;
+}
+.jianli-box .xinxi1 image{
+  width: 48rpx;
+  height: 48rpx;
+  margin: 0 20rpx 0 0;
+}
+.jianli-box .biaoqian text{
+  font-size: 24rpx;
+  padding: 6rpx 10rpx;
+  border: 1rpx solid #4585f5;
+  border-radius: 10rpx;
+  color: #4585f5;
+  margin: 0 10rpx;
+  
+}
+.jianli-box .xinxi3 text{
+    font-size: 28rpx;
+}
+.jianli-box .xinxi1 text{
+    font-size: 48rpx;
+    font-weight: bold;
+}
+.jianli-box .xinxi2{
+  margin: 10rpx 0;
+}
+.jianli-box .xinxi2 text{
+    font-size: 32rpx;
+    padding: 0 6rpx;
+}
+.jianli-box .xian{
+  width: 620rpx;
+  height: 2rpx;
+  background-color: #cecece;
+  margin: 20rpx 0;
+}
+.jianli-box .fanx-btn{
+  margin: 60rpx 0 0 0;
+}
+.jianli-box .fanx-btn .btn{
+  font-size: 28rpx;
+  width: 200rpx;
+  height: 68rpx;
+  background-color: #4585f5;
+  display: block;
+   border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+   border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  text-align: center;
+  line-height: 68rpx;
+  color: #fff;
+  box-shadow: 4rpx 4rpx 8rpx #bfabfe;
+}

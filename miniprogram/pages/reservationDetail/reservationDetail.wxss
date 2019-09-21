@@ -1,0 +1,42 @@
+/* pages/xinxi/xinxi.wxss */
+.grxx{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction:column;
+  padding: 24rpx;
+  position: relative;
+}
+.grxx .title{
+  font-size: 40rpx;
+}
+.grxx .fubiaoti{
+  font-size: 28rpx;
+  color: #888
+}
+.grxx .dizhi{
+  font-size: 28rpx;
+}
+.grxx image{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 80rpx;
+  top:60rpx;
+}
+.fenlei{
+  margin: 20rpx 0;
+}
+.btn-yuyue{
+  margin-top: 120rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.btn-yuyue text{
+  background-color: #4585f5;
+  padding: 20rpx 160rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  box-shadow: 4rpx 4rpx 8rpx #bfabfe;
+}
