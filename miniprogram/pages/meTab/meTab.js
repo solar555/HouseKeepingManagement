@@ -177,7 +177,8 @@ Page({
       url: app.globalData.server_base_url + '/app/auth/wechat_login',
       method: 'POST',
       data: {
-        openid: app.globalData.openid
+        openid: app.globalData.openid,
+        nickName: app.globalData.userInfo.nickName
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {

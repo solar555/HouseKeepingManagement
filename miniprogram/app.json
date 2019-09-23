@@ -5,7 +5,6 @@
     "pages/meTab/meTab",
     "pages/workerDetail/workerDetail",
     "pages/reservationDetail/reservationDetail",
-    "pages/login/login",
     "pages/workerList/workerList"
   ],
   "window": {

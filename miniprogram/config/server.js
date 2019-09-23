@@ -1,4 +1,4 @@
-const host = "https://housekeeping.nodepointech.com";
+const host = "https://wx.1zdj.cn";
 
 module.exports = {
   port: 443,

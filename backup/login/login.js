@@ -55,7 +55,7 @@ Page({
     console.log("detail:",e.detail)
 
     console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
+    console.log("userInfo:",e.detail.userInfo)
     console.log(e.detail.rawData)
 
     // 赋值全局变量userInfo
@@ -73,6 +73,8 @@ Page({
       data: {},
       success: res => {
         app.globalData.openid = res.result.openid
+        app.globalData.userInfo = res.result.userInfo;
+        console.log("res.result:",res.result)
 
         // 2. 小程序登录，获取openid后，业务登录（登录内部业务服务器）
         this.loginInternal(app.globalData.openid);
@@ -105,7 +107,8 @@ Page({
       url: app.globalData.server_base_url + '/app/auth/wechat_login',
       method: 'POST',
       data: {
-        openid: app.globalData.openid
+        openid: app.globalData.openid,
+        nickName: app.globalData.userInfo.nickName
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
